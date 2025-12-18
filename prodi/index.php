@@ -1,5 +1,5 @@
 <?php
-include "koneksi.php";
+include "../koneksi.php";
 $data = mysqli_query($koneksi, "SELECT * FROM prodi");
 ?>
 
@@ -35,19 +35,53 @@ $data = mysqli_query($koneksi, "SELECT * FROM prodi");
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto gap-2">
         <li class="nav-item">
-          <a class="nav-link active" href="index.php">Home</a>
+          <a class="nav-link active" href="../index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="mahasiswa/index.php">Mahasiswa</a>
+          <a class="nav-link" href="../mahasiswa/index.php">Mahasiswa</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="prodi/index.php">Prodi</a>
+          <a class="nav-link" href="index.php">Prodi</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
 <body>
+
+<div class="container py-4">
+  <h1 class="mb-4 text-center">Program Studi</h1>
+
+  <a href="create_prodi.php" class="btn btn-success mb-3">
+    Tambah Data Baru
+  </a>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Nama Prodi</th>
+        <th>Jenjang</th>
+        <th width="160">Aksi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php while ($row = mysqli_fetch_assoc($data)) : ?>
+      <tr>
+        <td><?= $row['nama_prodi']; ?></td>
+        <td><?= $row['jenjang']; ?></td>
+        <td>
+          <a href="update.php?id=<?= $row['id']; ?>" class="btn btn-warning btn-sm">Update</a>
+          <a href="delete.php?id=<?= $row['id']; ?>" 
+             class="btn btn-danger btn-sm"
+             onclick="return confirm('Yakin ingin menghapus?')">
+             Hapus
+          </a>
+        </td>
+      </tr>
+      <?php endwhile; ?>
+    </tbody>
+  </table>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>

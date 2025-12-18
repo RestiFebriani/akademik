@@ -1,3 +1,10 @@
+<?php
+require('../koneksi.php');
+
+$query = "SELECT id, nama_prodi FROM prodi";
+$result = mysqli_query($koneksi, $query);
+?>
+
 <!doctype html>
 <html lang="id">
 <head>
@@ -26,6 +33,18 @@
       <div class="mb-3">
         <label for="alamat" class="form-label">Alamat</label>
         <textarea name="alamat" id="alamat" class="form-control" required></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="alamat" class="form-label">Program Studi</label>
+        <select name="prodi_id" class="form-control" required>
+          <option value="">-- Pilih Prodi --</option>
+
+          <?php while ($row = mysqli_fetch_assoc($result)) : ?>
+            <option value="<?=  $row['id']; ?>">
+                <?=  $row['nama_prodi']; ?>
+          </option>
+          <?php endwhile; ?>
+        </select>
       </div>
 
       <button type="submit" name="submit" class="btn btn-primary">Simpan</button>

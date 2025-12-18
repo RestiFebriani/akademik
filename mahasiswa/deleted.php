@@ -1,14 +1,16 @@
 <?php
-include "koneksi.php";
+include "../koneksi.php";
 
 if (isset($_GET['id'])) {
     $nim_hapus = $_GET['id'];
 } else {
-    echo "<script>alert('NIM tidak ditemukan.'); window.location='index.php';</script>";
+    echo "<script>alert('ID Mahasiswa tidak ditemukan.'); window.location='index.php';</script>";
     exit();
 }
 
-$sql = "DELETE FROM mahasiswa WHERE nim='$nim_hapus'";
+$nim_bersih = mysqli_real_escape_string($koneksi, $nim_hapus);
+
+$sql = "DELETE FROM mahasiswa WHERE nim='$nim_bersih'";
 $query = $koneksi->query($sql);
 
 if ($query) {
