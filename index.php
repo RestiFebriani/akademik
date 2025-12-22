@@ -38,10 +38,10 @@ $data = mysqli_query($koneksi, "SELECT * FROM prodi");
           <a class="nav-link active" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="mahasiswa/index.php">Mahasiswa</a>
+          <a class="nav-link active" href="mahasiswa/index.php">Mahasiswa</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="prodi/index.php">Prodi</a>
+          <a class="nav-link active" href="prodi/index.php">Prodi</a>
         </li>
       </ul>
     </div>

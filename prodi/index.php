@@ -56,14 +56,16 @@ $data = mysqli_query($koneksi, "SELECT * FROM prodi");
     Tambah Data Baru
   </a>
 
-  <table class="table table-bordered">
-    <thead>
+  <div class="table-responsive">
+    <table class="table table-striped table-hover table-bordered">
+      <thead class="table-primary">
       <tr>
         <th>Nama Prodi</th>
         <th>Jenjang</th>
         <th width="160">Aksi</th>
       </tr>
-    </thead>
+</thead>
+
     <tbody>
       <?php while ($row = mysqli_fetch_assoc($data)) : ?>
       <tr>
