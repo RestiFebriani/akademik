@@ -1,10 +1,9 @@
 <?php
 session_start();
-include "koneksi.php";
+include "../koneksi.php";
 
-// Cegah akses langsung
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header("Location: login.php");
+    header("Location: ../login.php");
     exit;
 }
 
@@ -28,15 +27,15 @@ if (!$user) {
     exit;
 }
 
-// Cek password (sesuai model kamu: plain text)
-if ($password == $user['password']) {
-
+// Cek password
+if ($password == $user['password']) { // jika password plain text
+    // Set session
     $_SESSION['login'] = true;
+    $_SESSION['id']    = $user['id'];
     $_SESSION['nama']  = $user['nama'];
 
-    header("Location: index.php");
+    header("Location: /pemrogramanweb/akademik/index.php");
     exit;
-
 } else {
     echo "<script>
         alert('Password salah');

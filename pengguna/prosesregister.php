@@ -1,5 +1,5 @@
 <?php
-include "koneksi.php";
+include "../koneksi.php";
 
 // Cegah akses langsung
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
