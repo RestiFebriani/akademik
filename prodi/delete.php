@@ -8,7 +8,7 @@ if (isset($_GET['id'])) {
     $query = mysqli_query($koneksi, "DELETE FROM prodi WHERE id='$id'");
     
     if ($query) {
-        header("Location: index.php");
+        header("Location: indexprodi.php");
     } else {
         echo "<script>alert('Gagal menghapus! Data ini mungkin sedang digunakan oleh tabel mahasiswa.'); window.location='index.php';</script>";
     }

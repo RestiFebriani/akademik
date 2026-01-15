@@ -24,7 +24,7 @@ $hasil = $koneksi->query($sql);
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand fw-bold" href="#">Akademik</a>
+    <a class="navbar-brand fw-bold" href="#">Mahasiswa</a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
@@ -39,7 +39,7 @@ $hasil = $koneksi->query($sql);
           <a class="nav-link" href="../mahasiswa/index.php">Mahasiswa</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../prodi/index.php">Prodi</a>
+          <a class="nav-link" href="../prodi/indexprodi.php">Prodi</a>
         </li>
       </ul>
     </div>

@@ -12,4 +12,4 @@ mysqli_query($koneksi,
    WHERE id='$id'"
 );
 
-header("Location: index.php");
+header("Location: indexprodi.php");

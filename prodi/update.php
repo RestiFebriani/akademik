@@ -32,13 +32,12 @@ $row = mysqli_fetch_assoc($data);
         <option>D2</option>
         <option>D3</option>
         <option>D4</option>
-        <option>S1</option>
       </select>
     </div>
 
     <button type="submit" name="submit" class="btn btn-primary">Simpan</button>
       <button type="reset" class="btn btn-secondary">Reset</button>
-      <a href="index.php" class="btn btn-success">Data Prodi</a>
+      <a href="indexprodi.php" class="btn btn-success">Data Prodi</a>
   </form>
 </div>
 

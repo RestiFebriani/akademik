@@ -9,5 +9,5 @@ $sql = "INSERT INTO prodi (nama_prodi, jenjang)
 
 mysqli_query($koneksi, $sql);
 
-header("Location: index.php");
+header("Location: indexprodi.php");
 exit;
